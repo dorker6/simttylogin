@@ -54,11 +54,11 @@ int main(void){
     }      /* permitted access? */
 
 	terminate(pamh, PAM_SUCCESS);
-    return EXIT_SUCCESS;       /* indicate success */
+    return EXIT_SUCCESS;
 } 
 
 void terminate(pam_handle_t *pamh, int retval){
-	if (pam_end(pamh,retval) != PAM_SUCCESS) {     /* close Linux-PAM */
+	if (pam_end(pamh,retval) != PAM_SUCCESS) {
         pamh = NULL;
         perror("pam_end");
         exit(EXIT_FAILURE);
