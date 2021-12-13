@@ -8,7 +8,7 @@
 
 ## compiling and installing
 ### one command to rule them all:
-`./compile.sh && sudo ./install.sh`
+`chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
 ### withought root acess you can run:
 `./compile.sh`
 then from that directory run the program:
