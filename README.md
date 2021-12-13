@@ -2,10 +2,11 @@
 `simttylogin` a program to simulate tty login in terminal
 ## requirements
 ### ubuntu,debian and distros based on these
-`sudo apt update ; sudo apt install gcc pkg-config`
+`sudo apt update ; sudo apt install gcc pkg-config pam git`
 ### Arch and distros based on Arch:
-`sudo pacman -S gcc pkgconf`
-
+`sudo pacman --neded -S gcc pkgconf pam git`
+## download
+`git clone https://github.com/dorker6/simttylogin ; cd simttylogin`
 ## compiling and installing
 ### one command to rule them all:
 `chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
