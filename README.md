@@ -10,6 +10,6 @@
 ### one command to rule them all:
 `chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
 ### withought root acess you can run:
-`./compile.sh`
+`chmod +x ./compile.sh ; ./compile.sh`
 then from that directory run the program:
 `./simttylogin`
