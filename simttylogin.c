@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 #ifndef HOST_NAME_MAX
-	#warning "HOST_NAME_MAX is not defined"
+	#pragma GCC warning "HOST_NAME_MAX is not defined"
 	#define HOSTNAMELEN 100
 #endif
 
