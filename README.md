@@ -9,7 +9,7 @@ __Note: this program does not do a login your user won't change after a sucesful
 `sudo pacman --needed -S gcc pkgconf pam git`
 ## installing
 ## 1.method binary releases
-download `simttylogin-bin`,`simttylogin.conf`from [releases page](https://github.com/dorker6/simttylogin/releases) and `install.sh`
+download `simttylogin-bin`,`simttylogin.conf`and `install.sh` from [releases page](https://github.com/dorker6/simttylogin/releases)
 run: `chmod +x ./install.sh ; ./install.sh`
 ## 2.method source code
 ### one command to rule them all:
