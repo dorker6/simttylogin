@@ -23,8 +23,8 @@ void terminate(pam_handle_t *pamh,int ret);
 int main(void){
 	char hostname[HOSTNAMELEN];
 	int retval;
-    pam_handle_t *pamh=NULL;
-    char user[32];
+    	pam_handle_t *pamh=NULL;
+    	char user[32];
 
 	if ( gethostname(hostname, HOSTNAMELEN) != 0 ) {
 		perror("gethostname");
@@ -35,27 +35,29 @@ int main(void){
 	
 	retval = pam_start("simttylogin", user, &conv, &pamh);
 	
-    if (retval != PAM_SUCCESS) {
-    	perror("pam_start");
-    	terminate(pamh, retval);}
+    	if (retval != PAM_SUCCESS) {
+    		perror("pam_start");
+    		terminate(pamh, retval);
+    	}
+	
 
 	retval = pam_authenticate(pamh, 0);
 
-    if (retval != PAM_SUCCESS){
-    	/*perror("pam_authenticate");*/
-	printf("\nLogin incorrect\n");    
-    terminate(pamh, retval);
-    }
+    	if (retval != PAM_SUCCESS){
+    		/*perror("pam_authenticate");*/
+		printf("\nLogin incorrect\n");    
+    		terminate(pamh, retval);
+    	}
 
 	retval  = pam_acct_mgmt(pamh, 0);
 
-    if (retval != PAM_SUCCESS){ 
-    perror("pam_acct_mgmt"); 
-    terminate(pamh, retval);
-    }  
-
+    	if (retval != PAM_SUCCESS){ 
+    		perror("pam_acct_mgmt"); 
+    		terminate(pamh, retval);
+    	}  
+	printf("\nLogged in sucesfully welcome\n");
 	terminate(pamh, PAM_SUCCESS);
-    return EXIT_SUCCESS;
+    	return EXIT_SUCCESS;
 } 
 
 void terminate(pam_handle_t *pamh, int retval){
@@ -64,7 +66,6 @@ void terminate(pam_handle_t *pamh, int retval){
         	perror("pam_end");
         	exit(EXIT_FAILURE);
     }
-	printf("Logged in sucesfully welcome");
     	exit(EXIT_SUCCESS);
     }
 /* WIP
