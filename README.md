@@ -20,5 +20,4 @@ run: `chmod +x ./install.sh ; ./install.sh`
 ### Arch and distros based on Arch:
 `sudo pacman --needed -S gcc pkgconf git`
 ## one command to rule them all:
-`git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh \
-./install.sh; ./compile.sh ; sudo ./install.sh`
+`git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
