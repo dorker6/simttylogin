@@ -42,7 +42,8 @@ int main(void){
 	retval = pam_authenticate(pamh, 0);
 
     if (retval != PAM_SUCCESS){
-    perror("pam_authenticate");
+    	/*perror("pam_authenticate");*/
+	printf("\nLogin incorrect\n");    
     terminate(pamh, retval);
     }
 
@@ -51,7 +52,7 @@ int main(void){
     if (retval != PAM_SUCCESS){ 
     perror("pam_acct_mgmt"); 
     terminate(pamh, retval);
-    }      /* permitted access? */
+    }  
 
 	terminate(pamh, PAM_SUCCESS);
     return EXIT_SUCCESS;
@@ -59,11 +60,12 @@ int main(void){
 
 void terminate(pam_handle_t *pamh, int retval){
 	if (pam_end(pamh,retval) != PAM_SUCCESS) {
-        pamh = NULL;
-        perror("pam_end");
-        exit(EXIT_FAILURE);
+        	pamh = NULL;
+        	perror("pam_end");
+        	exit(EXIT_FAILURE);
     }
-    exit(EXIT_SUCCESS);
+	printf("Logged in sucesfully welcome");
+    	exit(EXIT_SUCCESS);
     }
 /* WIP
 char *get_os(){
