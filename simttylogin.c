@@ -31,7 +31,7 @@ int main(void){
 		if (hostname == NULL) sprintf(hostname, "unknown"); 
 	}
 	printf("%s login:", hostname);
-	scanf("%s", user);
+	scanf("%32s", user);
 	
 	retval = pam_start("simttylogin", user, &conv, &pamh);
 	
