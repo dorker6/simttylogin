@@ -1,5 +1,7 @@
 # simttylogin
 `simttylogin` a program to simulate tty login in terminal
+![screenscot from tty](simttylogin.png "Picture") 
+__Note: this program does not do a login your user won't change after a sucesfull login__
 ## requirements
 ### ubuntu,debian and distros based on these
 `sudo apt update ; sudo apt install gcc pkg-config pam git`
