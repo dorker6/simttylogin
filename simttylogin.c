@@ -45,7 +45,7 @@ int main(void){
 
     	if (retval != PAM_SUCCESS){
     		/*perror("pam_authenticate");*/
-		printf("\nLogin incorrect\n");    
+		printf("\nLogin incorrect\n\n");    
     		terminate(pamh, retval);
     	}
 
@@ -55,7 +55,7 @@ int main(void){
     		perror("pam_acct_mgmt"); 
     		terminate(pamh, retval);
     	}  
-	printf("\nLogged in sucesfully welcome\n");
+	printf("\nLogged in sucesfully welcome\n\n");
 	terminate(pamh, PAM_SUCCESS);
     	return EXIT_SUCCESS;
 } 
