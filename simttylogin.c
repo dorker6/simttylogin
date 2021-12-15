@@ -7,9 +7,7 @@
 #ifndef HOST_NAME_MAX
 	#pragma GCC warning "HOST_NAME_MAX is not defined"
 	#define HOSTNAMELEN 100
-#endif
-
-#ifndef HOSTNAMELEN 
+#else
 	#define HOSTNAMELEN HOST_NAME_MAX
 #endif
 
