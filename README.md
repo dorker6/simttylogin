@@ -25,5 +25,6 @@ NOTE: currently only red:on login failures green: on login sucesses
     also color can only be enabled during compile time
 ## one command to rule them all:
 `git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
+
 with colors:`git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh \
 ./install.sh; ./compile.sh -c ; sudo ./install.sh`
