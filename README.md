@@ -1,3 +1,4 @@
+[//] <> (note this is a comment i like to comment like this in md)
 # simttylogin
 `simttylogin` a program to simulate tty login in terminal
 ![screenscot from tty](simttylogin.png "Picture") 
@@ -19,5 +20,11 @@ run: `chmod +x ./install.sh ; ./install.sh`
 `sudo apt update ; sudo apt install gcc pkg-config git`
 ### Arch and distros based on Arch:
 `sudo pacman --needed -S gcc pkgconf git`
+## <span style="color:red">color</span> support [//] <> (oh i wish i wish each letter of the word 'color' to be in different color)
+run `compile.sh` with `-c` or `--enable-color` option
+NOTE: currently only red:on login failures green: on login sucesses
+    also color can only be enabled during compile time
 ## one command to rule them all:
 `git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh ./install.sh; ./compile.sh ; sudo ./install.sh`
+with colors:`git clone https://github.com/dorker6/simttylogin ; cd simttylogin ; chmod +x ./compile.sh \
+./install.sh; ./compile.sh -c ; sudo ./install.sh`
