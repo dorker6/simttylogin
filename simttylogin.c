@@ -4,6 +4,14 @@
 #include <stdio.h>
 #include <unistd.h>
 
+/*#define COLOR */ 
+
+#ifdef COLOR
+	#define GREEN "\x1b[32m"
+	#define RED "\x1b[31m"
+	#define CRESET "\x1b[0m"
+#endif
+
 #ifndef HOST_NAME_MAX
 	#pragma GCC warning "HOST_NAME_MAX is not defined"
 	#define HOSTNAMELEN 100
@@ -43,7 +51,11 @@ int main(void){
 
     	if (retval != PAM_SUCCESS){
     		/*perror("pam_authenticate");*/
-		printf("\nLogin incorrect\n\n");    
+#ifdef COLOR
+		printf("%s\nLogin incorrect\n\n%s", RED, CRESET);    
+#else
+		printf("\nLogin incorrect\n\n");
+#endif
     		terminate(pamh, retval);
     	}
 
@@ -53,7 +65,11 @@ int main(void){
     		perror("pam_acct_mgmt"); 
     		terminate(pamh, retval);
     	}  
+#ifdef COLOR  
+	printf("%s\nLogged in sucesfully welcome\n\n%s", GREEN, CRESET);
+#else
 	printf("\nLogged in sucesfully welcome\n\n");
+#endif
 	terminate(pamh, PAM_SUCCESS);
     	return EXIT_SUCCESS;
 } 
@@ -66,7 +82,7 @@ void terminate(pam_handle_t *pamh, int retval){
     }
     	exit(EXIT_SUCCESS);
     }
-/* WIP
+/* WIP TODO:implement this
 char *get_os(){
 	FILE *fp=fopen("/etc/os-release","r");
 	long int size;
